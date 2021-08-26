@@ -8,6 +8,7 @@ backup_rm() {
 
 	for file_or_dir in "$@"
 	do
+		file_or_dir="${file_or_dir%/}"
 		if [ ! -e "${file_or_dir}" ]
 		then
 			>&2 echo "rm: ${file_or_dir}: No such file or directory"
